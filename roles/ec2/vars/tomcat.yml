@@ -29,6 +29,7 @@ security_rules:
     cidr_ip: 0.0.0.0/0
 
 service_group: tomcat-server
-instances_to_lauch: 2
+instances_to_lauch: 1
 tag_ec2_name: tomcat
 tag_ec2_group: "{{ service_name }}"
+#ansible_python_interpreter: /usr/bin/python3

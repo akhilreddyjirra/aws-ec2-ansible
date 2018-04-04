@@ -6,22 +6,23 @@
 - name: Create instances for Tomcat
   hosts: 127.0.0.1
   gather_facts: False
+#  ansible_python_interpreter: /usr/bin/python3
   vars_files: 
     - roles/ec2/vars/tomcat.yml
   roles: 
     - ec2
 
 # Launch haproxy instance
-- name: Create instance for HAProxy
-  hosts: 127.0.0.1
-  gather_facts: False
-  vars_files: 
-    - roles/ec2/vars/haproxy.yml
-  roles: 
-    - ec2
+#- name: Create instance for HAProxy
+#  hosts: 127.0.0.1
+#  gather_facts: False
+#  vars_files: 
+#    - roles/ec2/vars/haproxy.yml
+#  roles: 
+#    - ec2
  
 # Launch config of services
-- include: site.yml
+- import_playbook: site.yml
 
 #- name: Terminate instances
 #  hosts: 127.0.0.1
