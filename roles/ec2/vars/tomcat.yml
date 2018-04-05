@@ -31,5 +31,6 @@ security_rules:
 service_group: tomcat-server
 instances_to_lauch: 1
 tag_ec2_name: tomcat
+tag_ec2_env: dev
 tag_ec2_group: "{{ service_name }}"
 #ansible_python_interpreter: /usr/bin/python3

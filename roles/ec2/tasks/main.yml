@@ -27,7 +27,8 @@
     exact_count: "{{ instances_to_lauch }}"
     vpc_subnet_id: "{{ subnets | join(',') }}" # to be specified for MICRO instances
     instance_tags:
-       Name: "{{ tag_ec2_name }}"
+       Name: "{{ tag_ec2_name }}-{{ tag_ec2_env }}-01"
+       Env: "{{ tag_ec2_env }}" 
        Group: "{{ tag_ec2_group }}"
        Current: "{{ tag_ec2_current }}"
   register: ec2
